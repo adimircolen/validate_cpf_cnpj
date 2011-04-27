@@ -1,3 +1,18 @@
 = ValidateCpfCnpj
 
 Validação de Cpf e Cnpj
+
+
+= Exemplos
+
+  class Person < ActiveRecord::Base
+    validates :identification, :cpf_format => true
+  end
+
+  class Company < ActiveRecord::Base
+    validates :cnpj, :cnpj_format => true
+  end
+
+= Maintainer
+
+* Ricardo Henrique (http://ricardohenrique.net)
