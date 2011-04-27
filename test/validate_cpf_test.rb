@@ -19,4 +19,9 @@ class ValidateCpfTest < ActiveSupport::TestCase
     assert !person.valid?
     assert_equal ["is invalid"], person.errors[:cpf]
   end
+  
+  test "validate formatted cpf" do
+    person = Person.new(:cpf => "111.444.777-35")
+    assert person.valid?
+  end
 end

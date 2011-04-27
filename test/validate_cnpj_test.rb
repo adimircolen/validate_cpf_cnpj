@@ -19,4 +19,9 @@ class ValidateCnpjTest < ActiveSupport::TestCase
     assert !company.valid?
     assert_equal ["is invalid"], company.errors[:cnpj]
   end
+  
+  test "validate formatted cnpj" do
+    company = Company.new(:cnpj => "691.036.040.001-60")
+    assert company.valid?
+  end
 end
